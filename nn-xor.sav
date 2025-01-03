@@ -1,0 +1,32 @@
+3 2 2 1 
+
+layer 0
+neuron 0
+value 1.000000
+delta 0.000000
+bias -0.344729
+weights 1.302204 0.183641 
+neuron 1
+value 1.000000
+delta 0.000000
+bias 0.307386
+weights 1.333902 0.183817 
+
+layer 1
+neuron 0
+value 0.999998
+delta -0.000000
+bias -0.269208
+weights 4.795488 
+neuron 1
+value 0.862627
+delta 0.008167
+bias -0.251636
+weights -6.035740 
+
+layer 2
+neuron 0
+value 0.113493
+delta -0.011419
+bias 0.100000
+
