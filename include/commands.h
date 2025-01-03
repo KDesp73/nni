@@ -1,5 +1,6 @@
 #ifndef COMMANDS_H
 #define COMMANDS_H
+#define ANSI_IMPLEMENTATION
 #include <io/ansi.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -13,7 +14,8 @@ typedef enum {
     COMMAND_HELP,
     COMMAND_QUIT,
     COMMAND_TRAIN,
-    COMMAND_PRINT
+    COMMAND_PRINT,
+    COMMAND_CLEAR,
 } Command;
 
 Command StringToCommand(char* str);
@@ -37,6 +39,7 @@ static inline void CommandHelp()
     printf("  feed <INPUT-VALUES>...\n");
     printf("  set <KEY> <VALUE>\n");
     printf("  print <VALUE>\n");
+    printf("  clear\n");
     printf("  help\n");
     printf("  quit\n");
 }

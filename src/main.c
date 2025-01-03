@@ -13,6 +13,7 @@
 #include <string.h>
 #include <time.h>
 
+#define ANSI_IMPLEMENTATION
 #include <io/ansi.h>
 
 Network* nn;

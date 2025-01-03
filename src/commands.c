@@ -29,6 +29,7 @@ Command StringToCommand(char* str)
     else IF_IS_COMMAND(str, "?", COMMAND_HELP);
     else IF_IS_COMMAND(str, "quit", COMMAND_QUIT);
     else IF_IS_COMMAND(str, "exit", COMMAND_QUIT);
+    else IF_IS_COMMAND(str, "clear", COMMAND_CLEAR);
     else IF_IS_COMMAND(str, "q", COMMAND_QUIT);
     else IF_IS_COMMAND(str, "feed", COMMAND_FEED);
     else return -1;
@@ -43,6 +44,9 @@ void HandleCommand(char* input)
 
     Command command = StringToCommand(tokens[0]);
     switch (command) {
+    case COMMAND_CLEAR:
+        ansi_clear_screen();
+        return;
     case COMMAND_NN:
         CommandNN(tokens, count);
         return;
@@ -79,6 +83,11 @@ void HandleCommand(char* input)
 
 void CommandPrint(char** tokens, size_t count)
 {
+    if(count != 2) {
+        erro("Provide a value");
+        return;
+    }
+    
     const char* value = tokens[1];
     if(!strcmp(value, "nn")){
         NetworkPrint(&state.nn);
@@ -88,6 +97,8 @@ void CommandPrint(char** tokens, size_t count)
         ConfigPrint();
     } else if(!strcmp(value, "state")){
         printf("debug=%s\n", (state.debug) ? "true" : "false");
+    } else {
+        erro("Unknown value \"%s\"", value);
     }
 }
 
