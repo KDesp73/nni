@@ -10,6 +10,19 @@
 - [x] Help
 - [x] Quit
 
+## Commands
+
+- `nn [LAYER-NEURONS]...`
+- `load [TYPE] [PATH]`
+- `set [KEY] [VALUE]`
+- `train`
+- `feed [INPUT-VALUES]...`
+- `save [PATH]`
+- `help`
+- `quit`
+- `print [VALUE]`
+
+
 ## Examples
 
 ```
@@ -34,15 +47,3 @@ info 0.982
 <help-message>
 > quit
 ```
-
-## Commands
-
-- nn <LAYER-NEURONS>...
-- load <TYPE> <PATH>
-- set <KEY> <VALUE>
-- train
-- feed <INPUT-VALUES>...
-- save <PATH>
-- help
-- quit
-
