@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Dependencies
+# 1. nn library (https://github.com/KDesp73/nn)
+# 2. io/ansi.h
+
+TEMP="$HOME/nntemp"
+
+create_temp() {
+    mkdir "$TEMP"
+    cd "$TEMP" || exit 1
+}
+
+install_nn() {
+    git clone https://github.com/KDesp73/nn
+    cd "$TEMP"/nn || exit 1
+
+    make install
+}
+
+create_temp
+install_nn
+
+# Install io libraries
+bash <(curl -s https://raw.githubusercontent.com/IncludeOnly/installer.sh/main/installer.sh)
+
+rm -rf "$TEMP"

@@ -1,7 +1,6 @@
 #ifndef LOG_H
 #define LOG_H
 
-#include <io/logging.h>
 #include <io/ansi.h>
 
 #define logtemp(stream, tag, fmt, ...) \
