@@ -160,7 +160,7 @@ void CommandSave(char** tokens, size_t count)
     }
 
     char* path = tokens[1];
-    NetworkdSave(&state.nn, path);
+    NetworkSave(&state.nn, path);
     info("Neural Network saved at %s", path);
 }
 
